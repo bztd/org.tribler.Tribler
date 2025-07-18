@@ -22,6 +22,15 @@ finish-args:
   - --env=SSL_CERT_DIR=/etc/ssl/certs
 modules:
   - shared-modules/libappindicator/libappindicator-gtk3-introspection-12.10.json
+  - name: xdg-open
+    buildsystem: simple
+    build-commands:
+      - install -Dm755 -t /app/bin xdg-open
+    sources:
+      - type: script
+        dest-filename: xdg-open
+        commands:
+
   - name: tribler
     buildsystem: simple
     build-commands:
@@ -31,6 +40,7 @@ modules:
       - ar x tribler.deb
       - tar xf data.tar.*
       - cp -r usr/share/* /app/share/ && rm -R usr/share
+      - install -Dm755 -t /app/bin xdg-open
     sources:
       - type: file
         url: https://github.com/Tribler/tribler/releases/download/v8.2.0/tribler_8.2.0_x64.deb
@@ -59,6 +69,8 @@ modules:
         commands:
           - export TMPDIR="${XDG_CACHE_HOME}"/tmp/
           - exec /app/share/tribler/tribler "$@"
+      - type: file
+        path: xdg-open
   - name: libsodium
     sources:
       - type: archive
