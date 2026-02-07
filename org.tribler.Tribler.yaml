@@ -43,8 +43,8 @@ modules:
       - install -Dm755 -t /app/bin xdg-open
     sources:
       - type: file
-        url: https://github.com/Tribler/tribler/releases/download/v8.2.0/tribler_8.2.0_x64.deb
-        sha256: 982639931582f012f98e4bfee458ef1280a02eb6757d5f66b86c841ec18ac663
+        url: https://github.com/Tribler/tribler/releases/download/v8.3.1/tribler_8.3.1_x64.deb
+        sha256: 50cec491fc81acfe17b7979ff04cc920250a1eceeda6d8f4ea38c22698d9c8cf
         dest-filename: tribler.deb
         only-arches:
           - x86_64
@@ -54,8 +54,8 @@ modules:
           stable-only: true
           url-template: https://github.com/Tribler/tribler/releases/download/v${version}/tribler_${version}_x64.deb
       - type: file
-        url: https://github.com/Tribler/tribler/releases/download/v8.2.0/tribler_8.2.0_aarch64.deb
-        sha256: 45b4f579c2fae70663d145def3bcf66d76ee76a9bc6a2117586bdfee8244c650
+        url: https://github.com/Tribler/tribler/releases/download/v8.3.1/tribler_8.3.1_aarch64.deb
+        sha256: 90de11593cc92777feacc1a34906e0aa9b045131a9529c173c1ab70109e51add
         dest-filename: tribler.deb
         only-arches:
           - aarch64
